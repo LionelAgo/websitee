@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Lionel Agostini | Researcher in Fluid Mechanics</title>
+    <meta name="description" content="Dr. Lionel Agostini is a CNRS Researcher in Fluid Mechanics specializing in turbulence, computational fluid dynamics, and machine learning applications.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #25256F;
+            --secondary-color: #87CEEB;
+            --accent-color: #FFD700;
+            --background-color: #F8F8F8;
+            --text-color: #333333;
+            --section-padding: 80px 0;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(37, 37, 111, 0.8), rgba(37, 37, 111, 0.9)), url('https://images.unsplash.com/photo-1509803874385-db7c23652218?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            color: white;
+            text-align: center;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .hero-position {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            max-width: 400px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content {
+            flex: 2;
+        }
+        
+        .about-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Research Interests */
+        .research {
+            padding: var(--section-padding);
+            background-color: #f9f9f9;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .research-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .research-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .research-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .research-card:hover .research-card-img img {
+            transform: scale(1.1);
+        }
+        
+        .research-card-content {
+            padding: 25px;
+        }
+        
+        .research-card-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .research-card-content p {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card-content {
+            padding: 25px;
+        }
+        
+        .project-card-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .project-time {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        
+        .project-card-content p {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        /* Publications Section */
+        .publications {
+            padding: var(--section-padding);
+            background-color: #f9f9f9;
+        }
+        
+        .publication-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .publication-list {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .publication-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .publication-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .publication-authors {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .publication-journal {
+            font-size: 15px;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .publication-year {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .publication-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .publication-link {
+            font-size: 14px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(37, 37, 111, 0.2);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsiveness */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-img {
+                margin: 0 auto 30px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+                font-size: 24px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-position {
+                font-size: 16px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                width: 90%;
+            }
+            
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Dr. Lionel Agostini</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Dr. Lionel Agostini</h1>
+            <div class="hero-position">Chargé de Recherche HDR - CNRS - Section 10</div>
+            <h2 class="hero-subtitle">Advancing the Understanding of Wall-Bounded Turbulence Through Data-Driven Approaches and Machine Learning</h2>
+            <div class="hero-btns">
+                <a href="#research" class="btn">View Research</a>
+                <a href="#" class="btn btn-outline">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Dr. Lionel Agostini">
+                </div>
+                <div class="about-content">
+                    <h3>Fluid Mechanics Researcher with Expertise in Turbulence Modeling</h3>
+                    <p>I am a researcher in fluid mechanics with over 15 years of experience in the study and modeling of wall-bounded turbulent flows. My expertise is built on an interdisciplinary approach that combines fundamental theory of turbulent flows, high-fidelity numerical code development, and implementation of advanced machine learning methods.</p>
+                    <p>Currently based at the <span class="highlight">Pprime Institute</span> at the University of Poitiers, I lead research on multi-scale interactions in wall-bounded flows, focusing on both fundamental physics and practical applications in drag reduction and heat transfer enhancement.</p>
+                    <p>My work on drag reduction through wall oscillations has significantly contributed to understanding the underlying mechanisms of flow control, demonstrating how coherent turbulent structures can be manipulated to optimize hydrodynamic performance. More recently, I've extended this expertise to the critical domain of heat transfer, establishing non-trivial relationships between heat and momentum transfer mechanisms.</p>
+                    <a href="#" class="btn">Download Full CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wall-bounded Turbulence">
+                    </div>
+                    <div class="research-card-content">
+                        <h3>Wall-bounded Turbulence</h3>
+                        <p>Investigating multi-scale interactions in turbulent flows, with a focus on the modulation of near-wall turbulence by large-scale outer structures. My work has led to new methods for scale separation and analysis of turbulent fields.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Drag Reduction & Heat Transfer">
+                    </div>
+                    <div class="research-card-content">
+                        <h3>Drag Reduction & Heat Transfer</h3>
+                        <p>Exploring innovative techniques for flow control using spanwise wall oscillations, with recent breakthroughs in preferential enhancement of heat transfer over drag. My research has demonstrated the breaking of the Reynolds analogy.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Machine Learning in Fluid Dynamics">
+                    </div>
+                    <div class="research-card-content">
+                        <h3>Machine Learning in Fluid Dynamics</h3>
+                        <p>Developing advanced machine learning techniques, particularly auto-encoders, to extract coherent structures from turbulent flow fields and create reduced-order models for prediction and control of complex flow systems.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Current Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>ANR JCJC INFERENCE</h3>
+                        <div class="project-time">2024-2028</div>
+                        <p>Modeling near-wall turbulence at high Reynolds numbers, focusing on the effects of outer flow structures on wall shear and heat transfer. Project lead with funding of 330k€.</p>
+                        <a href="https://anr.fr/Projet-ANR-23-CE46-0004" class="btn btn-outline">Project Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>ANR SOLAIRE</h3>
+                        <div class="project-time">2022-2026</div>
+                        <p>Machine learning for high-temperature solar receivers, optimizing heat transfer in concentrated solar power systems through active control of near-wall turbulence. Co-responsible for the Pprime team.</p>
+                        <a href="https://anr.fr/Projet-ANR-21-CE50-0031" class="btn btn-outline">Project Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>ANR MUFDD</h3>
+                        <div class="project-time">2023-2027</div>
+                        <p>Data-driven modeling of urban canopy flows, developing methods to build estimators and reduced-order models from simulation and experimental data.</p>
+                        <a href="https://anr.fr/Projet-ANR-22-CE22-0008" class="btn btn-outline">Project Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>SAFRAN Aircraft Engines Collaboration</h3>
+                        <div class="project-time">2023-2025</div>
+                        <p>Study of turbulent flows in aircraft engines through active control of secondary flow instabilities, exploiting Görtler instabilities for enhanced heat transfer with minimal drag penalty.</p>
+                        <a href="#" class="btn btn-outline">Project Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="publication-filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Boundary Layer Theory</button>
+                <button class="filter-btn">Drag Reduction</button>
+                <button class="filter-btn">Heat Transfer</button>
+                <button class="filter-btn">Machine Learning</button>
+            </div>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <h3 class="publication-title">Auto-encoder-assisted analysis of amplitude and wavelength modulation of near-wall turbulence by outer large-scale structures in channel flow at friction Reynolds number of 5200</h3>
+                    <p class="publication-authors"><strong>L. Agostini</strong> & M. A. Leschziner</p>
+                    <p class="publication-journal">Physics of Fluids, Vol. 34</p>
+                    <p class="publication-year">2022</p>
+                    <div class="publication-links">
+                        <a href="https://hal.science/hal-03852043/document" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="#" class="publication-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> DOI
+                        </a>
+                    </div>
+                </div>
+                <div class="publication-item">
+                    <h3 class="publication-title">Preferential Enhancement of Convective Heat Transfer Over Drag Via Near-Wall Turbulence Manipulation Using Spanwise Wall Oscillations</h3>
+                    <p class="publication-authors">L. Guérin, C. Flageul, L. Cordier, S. Grieu, & <strong>L. Agostini</strong></p>
+                    <p class="publication-journal">International Journal of Heat and Fluid Flow, Vol. 1010:109564</p>
+                    <p class="publication-year">2024</p>
+                    <div class="publication-links">
+                        <a href="https://doi.org/10.1016/j.ijheatfluidflow.2024.109564" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="#" class="publication-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> DOI
+                        </a>
+                    </div>
+                </div>
+                <div class="publication-item">
+                    <h3 class="publication-title">Statistical analysis of outer large-scale/inner-layer interactions in channel flow subjected to oscillatory drag-reducing wall motion using a multiple-variable joint PDF methodology</h3>
+                    <p class="publication-authors"><strong>L. Agostini</strong> & M. A. Leschziner</p>
+                    <p class="publication-journal">Journal of Fluid Mechanics, Vol. 923</p>
+                    <p class="publication-year">2021</p>
+                    <div class="publication-links">
+                        <a href="https://doi.org/10.1017/jfm.2021.585" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="#" class="publication-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> DOI
+                        </a>
+                    </div>
+                </div>
+                <div class="publication-item">
+                    <h3 class="publication-title">Exploration and prediction of fluid dynamical systems using Auto-Encoder technology</h3>
+                    <p class="publication-authors"><strong>L. Agostini</strong></p>
+                    <p class="publication-journal">Physics of Fluids, Vol. 32(6):067103</p>
+                    <p class="publication-year">2020</p>
+                    <div class="publication-links">
+                        <a href="https://doi.org/10.1063/5.0012906" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="#" class="publication-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 40px; text-align: center;">
+                <a href="publications.html" class="btn">View All Publications</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Institut Pprime, Université de Poitiers<br>France</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>lionel.agostini@univ-poitiers.fr</p>
+                        </div>
+                    </div>
+                    <h3>Academic Profiles</h3>
+                    <div class="social-links">
+                        <a href="https://orcid.org/0000-0001-8305-5493" class="social-link" target="_blank" title="ORCID">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="https://publons.com/researcher/2949337/lionel-agostini/" class="social-link" target="_blank" title="Publons">
+                            <i class="fas fa-bookmark"></i>
+                        </a>
+                        <a href="https://scholar.google.co.uk/citations?user=wGGHJvijIz8C&hl=en" class="social-link" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://github.com/LionelAgo" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.scopus.com/authid/detail.uri?authorId=55015567200" class="social-link" target="_blank" title="Scopus">
+                            <i class="fas fa-database"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">Dr. Lionel Agostini</div>
+                    <p>Chargé de Recherche HDR - CNRS<br>Institut Pprime - Université de Poitiers</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Research Areas</h4>
+                    <ul>
+                        <li><a href="#">Wall-bounded Turbulence</a></li>
+                        <li><a href="#">Drag Reduction</a></li>
+                        <li><a href="#">Heat Transfer</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Computational Fluid Dynamics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Dr. Lionel Agostini. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                header.style.padding = '0';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.padding = '0';
+            }
+        });
+        
+        // Publication filters
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // In a real implementation, you would filter the publications here
+            });
+        });
+    </script>
